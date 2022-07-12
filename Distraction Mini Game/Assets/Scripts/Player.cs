@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public float levelWidth = 5.5f;
     public float levelHeight = 5f;
-    public float playerStartPosition = -3.5f;
+    public float playerStartPosition = 3.5f;
 
     private Rigidbody rb;
     private float moveX;

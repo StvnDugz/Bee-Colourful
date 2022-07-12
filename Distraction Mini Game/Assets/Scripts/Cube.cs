@@ -10,7 +10,7 @@ public class Cube : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("You died");
-            Destroy(gameObject);
+            //Destroy(other.gameObject);
         }
     }
 }
