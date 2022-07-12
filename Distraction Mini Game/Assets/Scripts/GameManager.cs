@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
         if (gameOver == false)
         {
-            Debug.Log("GAME OVER");
+            Debug.Log("Level Failed");
             gameOver = true;
         }
     }
