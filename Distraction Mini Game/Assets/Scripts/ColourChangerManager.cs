@@ -5,7 +5,6 @@ using UnityEngine;
 public class ColourChangerManager : MonoBehaviour
 {
     public string currentColour;
-
     private Color colourRed = Color.red;
     private Color colourGreen = Color.green;
     private Color colourBlue = Color.blue;
@@ -32,6 +31,7 @@ public class ColourChangerManager : MonoBehaviour
         if (col.tag == currentColour)
         {
             Debug.Log("+ 1 point");
+            ScoreManager.instance.PlayerScored();
             Destroy(col.gameObject);
         }
     }

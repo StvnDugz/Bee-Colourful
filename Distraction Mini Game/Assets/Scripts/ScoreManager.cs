@@ -1,12 +1,13 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    public static GameManager instance;         // Creating an instance of the GameManger
-    public Text scoreText;
+    public static ScoreManager instance;
+    //public GameObject gameOverText;
+    private Text scoreText;
     public bool gameOver = false;
     private int score = 0;
 
@@ -22,16 +23,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LevelFailed()
+    void Start()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-        if (gameOver == false)
-        {
-            Debug.Log("Level Failed");
-            gameOver = true;
-        }
+        scoreText = GetComponent<Text>();
     }
+
 
     public void PlayerScored()
     {
@@ -40,7 +36,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         score++;
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = score.ToString();
     }
 
     public void PlayerDied()
