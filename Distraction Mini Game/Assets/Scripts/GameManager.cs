@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;         // Creating an instance of the GameManger
-    public Text scoreText;
     public bool gameOver = false;
-    private int score = 0;
+    public float slowAmount = 10f;              // The amount of slow motion
+    public GameObject levelFailedText;          // The text displaying that the level has been failed
 
     void Awake()
     {
@@ -24,28 +24,24 @@ public class GameManager : MonoBehaviour
 
     public void LevelFailed()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
         if (gameOver == false)
         {
             Debug.Log("Level Failed");
             gameOver = true;
+            levelFailedText.SetActive(true);
+            StartCoroutine(RestartLevel());
         }
     }
 
-    public void PlayerScored()
+    IEnumerator RestartLevel()
     {
-        if (gameOver)
-        {
-            return;
-        }
-        score++;
-        scoreText.text = "Score: " + score.ToString();
-    }
+        Time.timeScale = 1f / slowAmount;
+        Time.fixedDeltaTime = Time.fixedDeltaTime / slowAmount;
 
-    public void PlayerDied()
-    {
-        //gameOverText.SetActive(true);
-        gameOver = true;
+        yield return new WaitForSeconds(2f / slowAmount);
+
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = Time.fixedDeltaTime * slowAmount;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
