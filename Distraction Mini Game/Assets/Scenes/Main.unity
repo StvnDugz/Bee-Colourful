@@ -1393,6 +1393,7 @@ GameObject:
   - component: {fileID: 6108475528405524206}
   - component: {fileID: 6108475528405524205}
   - component: {fileID: 6108475528405524207}
+  - component: {fileID: 6108475528405524208}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -1426,7 +1427,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentColour: 
---- !u!82 &6108475528405524207
+--- !u!114 &6108475528405524207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108475528405524204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2ec2d17e8cb81498be18511fcb020f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &6108475528405524208
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1436,7 +1449,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8e0bdba80b6511642a6a1bfc4cb095cb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: df3460689af77aa47b93f56dd04d1202, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
