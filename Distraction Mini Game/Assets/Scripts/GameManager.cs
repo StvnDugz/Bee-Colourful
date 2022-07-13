@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f / slowAmount;
         Time.fixedDeltaTime = Time.fixedDeltaTime / slowAmount;
 
-        yield return new WaitForSeconds(2f / slowAmount);
+        yield return new WaitForSeconds(3.5f / slowAmount);
 
         Time.timeScale = 1f;
         Time.fixedDeltaTime = Time.fixedDeltaTime * slowAmount;
