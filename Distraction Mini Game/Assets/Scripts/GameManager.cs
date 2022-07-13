@@ -44,4 +44,8 @@ public class GameManager : MonoBehaviour
         Time.fixedDeltaTime = Time.fixedDeltaTime * slowAmount;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
