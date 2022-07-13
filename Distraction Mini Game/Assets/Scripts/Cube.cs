@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    public float speed = 20f;
+    public float speed = 10f;
     private AudioSource hitAudio;       // Reference to the audio source component
     void Start()
     {
