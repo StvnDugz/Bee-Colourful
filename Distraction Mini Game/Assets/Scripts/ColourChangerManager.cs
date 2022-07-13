@@ -12,28 +12,12 @@ public class ColourChangerManager : MonoBehaviour
     private Color colourMagenta = Color.magenta;
     private Color colourYellow = Color.yellow;
     private Color colourBlack = Color.black;
-
     private MeshRenderer meshColour;                 // Reference to the mesh renderer component
 
     void Start()
     {
         meshColour = GetComponent<MeshRenderer>();
         SetRandomColor();
-    }
-
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag != currentColour)
-        {
-            GameManager.instance.LevelFailed();
-        }
-
-        if (col.tag == currentColour)
-        {
-            Debug.Log("+ 1 point");
-            ScoreManager.instance.PlayerScored();
-            Destroy(col.gameObject);
-        }
     }
 
     public void SetRandomColor()

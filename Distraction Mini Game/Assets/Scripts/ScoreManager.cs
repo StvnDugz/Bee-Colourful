@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    //public GameObject gameOverText;
     private Text scoreText;
     public bool gameOver = false;
     private int score = 0;
@@ -36,12 +35,7 @@ public class ScoreManager : MonoBehaviour
             return;
         }
         score++;
+        Debug.Log("+ 1 point in scoremanager");
         scoreText.text = score.ToString();
-    }
-
-    public void PlayerDied()
-    {
-        //gameOverText.SetActive(true);
-        gameOver = true;
     }
 }
