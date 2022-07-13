@@ -27,7 +27,6 @@ public class ScoreManager : MonoBehaviour
         scoreText = GetComponent<Text>();
     }
 
-
     public void PlayerScored()
     {
         if (gameOver)
@@ -35,7 +34,7 @@ public class ScoreManager : MonoBehaviour
             return;
         }
         score++;
-        Debug.Log("+ 1 point in scoremanager");
+        Debug.Log("+ 1 point");
         scoreText.text = score.ToString();
     }
 }

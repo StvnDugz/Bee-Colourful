@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
 
     }
 
-
     void FixedUpdate()
     {
         rb.MovePosition(transform.position + (movement * Time.fixedDeltaTime * speed));
