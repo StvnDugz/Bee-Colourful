@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    //void OnCollisionEnter(Collision other)
-    //{
-    //    // If this object collides with the object tagged
-    //    if (other.gameObject.CompareTag("Player"))
-    //    {
-    //        Debug.Log("You died");
-    //        GameManager.instance.LevelFailed();
-    //    }
-    //}
+    public float speed = 20f;
+    void Start()
+    {
+        GetComponent<Rigidbody>().drag -= Time.timeSinceLevelLoad / speed;
+    }
 }
