@@ -27,7 +27,7 @@ public class ObjectSpawner : MonoBehaviour
                 if (randomIndex != i)
                 {
                     // Spawn the prefab[i] at position[i] with no rotation
-                    Instantiate(cubePrefab[randomColour], spawnPoints[i].position, Quaternion.identity);
+                    Instantiate(cubePrefab[randomColour], spawnPoints[i].position, transform.rotation);
                 }
 
             }

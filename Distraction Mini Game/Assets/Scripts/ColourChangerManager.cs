@@ -11,12 +11,12 @@ public class ColourChangerManager : MonoBehaviour
     private Color colourCyan = Color.cyan;
     private Color colourMagenta = Color.magenta;
     private Color colourYellow = Color.yellow;
-    private Color colourBlack = Color.black;
-    private MeshRenderer meshColour;                 // Reference to the mesh renderer component
+    private Color colourWhite = Color.white;
+    private SkinnedMeshRenderer meshColour;
 
     void Start()
     {
-        meshColour = GetComponent<MeshRenderer>();
+        meshColour = GetComponent<SkinnedMeshRenderer>();
         SetRandomColor();
     }
 
@@ -39,8 +39,8 @@ public class ColourChangerManager : MonoBehaviour
                 meshColour.material.color = Color.yellow;
                 break;
             case 3:
-                currentColour = "Black";
-                meshColour.material.color = Color.black;
+                currentColour = "White";
+                meshColour.material.color = Color.white;
                 break;
         }
     }
